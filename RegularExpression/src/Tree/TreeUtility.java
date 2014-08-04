@@ -21,6 +21,10 @@ public class TreeUtility {
 	 * This seems very important for java generic part
 	 */
 	
+	public static BinaryTree GetSampleTree(){
+		return sampleTree;
+	}
+	
 	/**
 	 * Build a binary tree from sorted array
 	 * @param array

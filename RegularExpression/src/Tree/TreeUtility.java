@@ -30,7 +30,7 @@ public class TreeUtility {
 	 * @param array
 	 * @return
 	 */
-	public static <T> BinaryTree TreeFromArray(T[] array){
+	public static <T extends Comparable<T>> BinaryTree TreeFromArray(T[] array){
 		if(array == null || array.length == 0)
 			return null;
 		
@@ -39,7 +39,7 @@ public class TreeUtility {
 		return root;
 	}
 	
-	public static <T> BinaryTree TreeFromArray(T[] array, int left, int right){
+	public static <T extends Comparable<T>> BinaryTree TreeFromArray(T[] array, int left, int right){
 		if(left > right)
 			return null;
 		
@@ -105,6 +105,23 @@ public class TreeUtility {
 	public static void TraverseTreePreOrderNonRecursive(BinaryTree root){
 		
 	}
+
+
+	public static void TraverseTreePostOrder(BinaryTree root){
+
+	}
+
+	public static void TraverseTreePostOrderNonRecursive(BinaryTree root){
+
+	}
+
+	public static int TreeHeight(BinaryTree root){
+		if(root == null){
+			return 0;
+		}
+
+		return Math.max(TreeHeight(root.left), TreeHeight(root.right)) + 1;
+	}
 	
 	
 	/**
@@ -139,9 +156,8 @@ public class TreeUtility {
 	
 	
 	public static void main(String[] args){
-		Integer[] array = {1, 2, 3, 4, 5};
-		BinaryTree root = TreeUtility.TreeFromArray(array);
-		TreeUtility.TraverseTreeLeverOrder(TreeUtility.sampleTree);
+		BinaryTree root = TreeUtility.GetSampleTree();
+		TraverseTreeLeverOrder(root);
 	}
 
 }

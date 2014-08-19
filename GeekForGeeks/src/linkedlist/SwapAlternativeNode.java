@@ -14,31 +14,7 @@ package linkedlist;
  */
 public class SwapAlternativeNode {
 	
-	public static ListNode SwapAlternative(ListNode odd){
-		if(odd == null || odd.next == null || odd.next.next == null)
-			return odd;
-		ListNode head = new ListNode();
-		head.next = odd;
-		
-		ListNode even = odd.next;
-		odd.next = odd.next.next;
-		odd = odd.next;
-		even.next = null;
-		
-		while(odd != null && odd.next != null){
-			ListNode temp = odd.next.next;
-			odd.next.next = even;
-			even = odd.next;
-			odd.next = temp;
-			if(temp != null)
-				odd = temp;
-		}
-		odd.next = even;
-		
-		return head.next;
-	}
-	
-	public static ListNode test(ListNode list){
+	public static ListNode SwapAlternative(ListNode list){
 		if(list == null || list.next == null || list.next.next == null)
 			return list;
 		
@@ -69,7 +45,7 @@ public class SwapAlternativeNode {
 		ListNode list = new ListNode<Integer>();
 		list.GetSampleList(array);
 		list.PrintList();
-		ListNode res = test(list);
+		ListNode res = SwapAlternative(list);
 		res.PrintList();
 	}
 }

@@ -11,20 +11,6 @@ package linkedlist;
  * 1->2->3->4->5->6->null
  *
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class SwapPairNode {
 	public static ListNode<String> SwapPairWiseNode(ListNode<String> list){
 		if(list == null || list.next == null)
@@ -33,11 +19,25 @@ public class SwapPairNode {
 
 		ListNode prev = list;
 		ListNode curr = list.next;
-
-		while(){
+		head.next = curr;
+		
+		while(true){
+			ListNode next = curr.next;
+			curr.next = prev;
 			
+			if(next == null || next.next == null){
+				System.out.println("Empty Now");
+				prev.next = next;//without the assignment, prev (in 1,2,3,4,5,6 example) will always point to 5...
+				//no end.
+				break;
+			}
+			
+			prev.next = next.next;
+			prev = next;
+			curr = prev.next;
 		}
-		return null;
+		
+		return head.next;
 	}
 	
 	public static void main(String[] args){

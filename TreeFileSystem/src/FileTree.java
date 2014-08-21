@@ -23,6 +23,10 @@ public class FileTree {
 		File file = new File(path);
 		FileStructureSearch(file, 0, 0);
 	}
+	
+	public static void FileSearchRegularMatch(){
+		
+	}
 
 
 	public static void FileStructureSearch(File file, int startPoint, int space){
@@ -34,9 +38,6 @@ public class FileTree {
 		else{
 			if(!file.isHidden()){
 				PrintFormat(startPoint, space, "|", "——");
-				/**
-                                             * space ? startPoint
-				*/
 				System.out.println(FormName(file.toString(), "/"));
 				for(int i = 0; i < file.list().length; i++){
 					space++;
@@ -66,6 +67,10 @@ public class FileTree {
 		if (args == null || args.length < 1) {
 			FileSearch("~/Downloads");
 		}
+		
+//		else if(args.length > 2 && args[]){
+//			
+//		}
 
 		else {
 			FileSearch(args[0]);

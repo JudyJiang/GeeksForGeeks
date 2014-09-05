@@ -5,7 +5,7 @@ public class ListNode <T extends Comparable<T>> implements Utility<T>{
 	 *the additional "T" is
 	 *so important!!! */
 	public T value;
-	public ListNode next;
+	public ListNode<T> next;
 	
 	public ListNode(){
 		super();
@@ -36,6 +36,18 @@ public class ListNode <T extends Comparable<T>> implements Utility<T>{
 		}
 		tempNode.next = node;
 		//node.next = null;
+	}
+	
+	
+	public ListNode<T> GetTail(){
+		if(this.next == null)
+			return new ListNode(this.value);
+		
+		ListNode<T> cursor = this.next;
+		while(cursor.next != null){
+			cursor = cursor.next;
+		}
+		return cursor;
 	}
 
 	@Override

@@ -2,13 +2,13 @@ import java.io.File;
 
 /**
  * Personal Utility Function for structure file.
+ * 
  * @author FengjiaoJiang
- *
+ * 
  */
 
 /*
- * TODO: Add root structure (startPoint)
- *       Personal Search
+ * TODO: Add root structure (startPoint) Personal Search
  */
 public class FileTree {
 	public static void FileSearch() {
@@ -23,40 +23,49 @@ public class FileTree {
 		File file = new File(path);
 		FileStructureSearch(file, 0, 0);
 	}
-	
-	public static void FileSearchRegularMatch(){
+
+	public static void FileSearchRegularMatch(String path, String patternType,
+			String pattern) {
+		File file = new File(path);
+		String finalPattern = RegularExpressionMatch.DecidePatternType(patternType, pattern);
 		
+		FileStructureRegularSearch(file, 0, 0, finalPattern);
 	}
 
+	public static void FileStructureRegularSearch(File file, int startPoint,
+			int space, String pattern) {
+		// RegularExpressionMatch
+	}
 
-	public static void FileStructureSearch(File file, int startPoint, int space){
-		if(!file.isDirectory() && !file.isHidden()){
-			PrintFormat(startPoint, space, "|", "——");
+	public static void FileStructureSearch(File file, int startPoint, int space) {
+		if (!file.isDirectory() && !file.isHidden()) {
+			PrintFormat(startPoint, space, "|", "--");
 			System.out.println(FormName(file.toString(), "/"));
 		}
 
-		else{
-			if(!file.isHidden()){
-				PrintFormat(startPoint, space, "|", "——");
+		else {
+			if (!file.isHidden()) {
+				PrintFormat(startPoint, space, "|", "--");
 				System.out.println(FormName(file.toString(), "/"));
-				for(int i = 0; i < file.list().length; i++){
+				for (int i = 0; i < file.list().length; i++) {
 					space++;
-					FileStructureSearch(new File(file, file.list()[i]), startPoint, space);
+					FileStructureSearch(new File(file, file.list()[i]),
+							startPoint, space);
 					space--;
 				}
 			}
 		}
 	}
 
-	public static void PrintFormat(int start, int space, String rootSign, String subSign){
-		for(int i = 0; i < start; i++)
+	public static void PrintFormat(int start, int space, String rootSign,
+			String subSign) {
+		for (int i = 0; i < start; i++)
 			System.out.print(" ");
 		System.out.print(rootSign);
 
-		for(int i = 0; i < space; i++)
+		for (int i = 0; i < space; i++)
 			System.out.print(subSign);
 	}
-
 
 	public static String FormName(String name, String separator) {
 
@@ -68,10 +77,6 @@ public class FileTree {
 			FileSearch("~/Downloads");
 		}
 		
-//		else if(args.length > 2 && args[]){
-//			
-//		}
-
 		else {
 			FileSearch(args[0]);
 		}

@@ -1,6 +1,6 @@
 package tree;
 
-/**
+/**I feel so proud of myself on this one!
  * Find Maximum Sum path within two leaves.
  * Doesn't have to through the root.
  * 

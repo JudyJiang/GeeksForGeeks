@@ -76,11 +76,11 @@ public class SQLUtility {
 	
 	public static void main(String[] args){
 		String filePath = "/Users/fengjiaojiang/Downloads/" +
-				"DataAPIPriceInput.txt";
+				"/Query Backup/DataAPI_EsimateInputForwardSingleValue.txt";
 		try {
 			List<String> entries = readTextFile(filePath);
 			WriteBackToFile(entries, "/Users/fengjiaojiang/Downloads/" +
-					                 "DataAPIPriceInput.txt");
+				"/Query Backup/DataAPI_EsimateInputForwardSingleValue.txt");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

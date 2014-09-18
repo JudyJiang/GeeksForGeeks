@@ -64,6 +64,21 @@ public class ListNode <T extends Comparable<T>> implements Utility<T>{
 		}
 		System.out.println();
 	}
+	
+	public void PrintCircularList(){
+		if(this == null){
+			System.out.println("Null List");
+			return;
+		}
+		
+		ListNode p = this;
+		while(p.next != this){
+			System.out.print(p.value + " ");
+			p = p.next;
+		}
+		
+		System.out.print(p.value);
+	}
 
 	@Override
 	public void GetSampleList(T[] arr) {

@@ -87,4 +87,15 @@ public class ListNode <T extends Comparable<T>> implements Utility<T>{
 			this.AddNode((T)arr[i]);
 		}
 	}
+	
+	public int GetListLength(){
+		int len = 0;
+		ListNode p = this;
+		while(p != null){
+			len++;
+			p = p.next;
+		}
+		
+		return len;
+	}
 }

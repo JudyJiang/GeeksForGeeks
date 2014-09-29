@@ -66,6 +66,15 @@ public class LRUCache {
 		}
 		
 		DoubleListNode referencePage = new DoubleListNode(pageNum);
+		if(queue.IsQueueEmpty())
+			queue.front = queue.rear = referencePage;
+		
+		referencePage.next = queue.front;
+		queue.front.previous = referencePage;
+		queue.front = referencePage;
+		
+		queue.size++;
+		map.put(pageNum, referencePage);
 	}
 	
 	public static void Reference(Queue queue, HashMap map, int pageNum){
@@ -80,9 +89,20 @@ public class LRUCache {
 		else{
 			if(queue.front != reqPage){
 				
+				reqPage.previous.next = reqPage.next;
+				if(reqPage.next != null)
+					reqPage.next.previous = reqPage.previous;
+				
 				if(queue.rear == reqPage){
-					
+					queue.rear = reqPage.previous;
+					queue.rear.next = null;
 				}
+				
+				reqPage.next = queue.front;
+				queue.front.previous = reqPage;
+				reqPage.previous = null;
+				
+				queue.front = reqPage;
 			}
 		}
 		
@@ -102,9 +122,14 @@ public class LRUCache {
 		/*
 		 * Different reference entries
 		 */
+		
+		System.out.println(queue.front.value);
+		System.out.println(queue.front.next.value);
+		System.out.println(queue.front.next.next.value);
+		System.out.println(queue.front.next.next.next.value);
 	}
 	
 	public static void main(String[] args){
-		
+		LRUCacheUtilty();
 	}
 }

@@ -5,7 +5,8 @@ package linkedlist;
  * http://www.geeksforgeeks.org/pairwise-swap-elements-of-a-given-linked-list/
  * 1->2->3->4 => 2->1->4->3
  * 1->2->3->4->5 => 2->1->4->3->5
- * @author fengjiaojiang
+ * Noted: Well, seems like a one time luck. So, make sure use more than one pointers here, like problems in this kind.
+ * @author FengjiaoJiang
  *
  */
 public class SwapPairNodeList {
@@ -26,7 +27,7 @@ public class SwapPairNodeList {
 			q.next = p;
 			p.next = k;
 			previous = previous.next.next;
-			p = previous.next;
+			p = previous.next;//This step is actually very important.
 		}
 		return newHead.next;
 	}
@@ -34,6 +35,8 @@ public class SwapPairNodeList {
 	//head->1->2->3->4
 	//head->1->2->3->4->5
 	
+	
+
 	public static void main(String[] args){
 		ListNode head = new ListNode();
 		head.GetSampleList(new Integer[]{1, 2, 3, 4, 5, 6});

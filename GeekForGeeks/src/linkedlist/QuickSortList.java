@@ -14,6 +14,54 @@ public class QuickSortList {
 	/**
 	 * TODO: Implement QuickSort on LinkedList
 	 */
+	public static ListNode<Integer> QuickSort(ListNode<Integer> head){
+		if(head == null || head.next == null)
+			return head;
+		
+		ListNode<Integer> tail = GetTail(head);
+		int compareValue = tail.value;
+		
+		
+		ListNode<Integer> tailHead = tail, newHead = new ListNode(), previous = newHead, p = head;
+		newHead.next = head;
+		
+		while(p != tailHead){
+			//System.out.println(p.value + " " + previous.value);
+			ListNode<Integer> next = p.next;
+			if(p.value <= compareValue){
+				previous = previous.next;
+			}
+			else{
+				previous.next = p.next;
+				tail.next = p;
+				tail = tail.next;
+			}
+			p = next;
+		}
+		
+		tail.next = null;
+		tailHead = tailHead.next;
+		p.next = null;
+		
+		ListNode<Integer> l1 = QuickSort(newHead.next);
+		ListNode<Integer> l2 = QuickSort(tailHead);
+		
+		p.next = tailHead;
+		//System.out.println(l1.value);
+		//newHead = QuickSort(newHead.next);
+		//tailHead = QuickSort(tailHead);
+		
+		return l1;
+	}
+	
+	public static ListNode<Integer> GetTail(ListNode<Integer> head){
+		ListNode p = head;
+		while(p.next != null)
+			p = p.next;
+		return p;
+	}
+	
+	
 	/**
 	 * It's a .. partition & tradition sort
 	 * @param head
@@ -72,8 +120,9 @@ public class QuickSortList {
 		Integer[] arr = { 5, 2, 6, 3, 7, 9, 1 };
 		ListNode<Integer> list = new ListNode<Integer>();
 		list.GetSampleList(arr);
+		QuickSort(list);
 		//QuickSort(list, null);
-		list = SortList(list);
-		list.PrintList();
+		//list = SortList(list);
+		//list.PrintList();
 	}
 }

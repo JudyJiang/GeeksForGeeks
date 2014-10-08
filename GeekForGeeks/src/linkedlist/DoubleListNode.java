@@ -1,15 +1,17 @@
 package linkedlist;
 
-public class DoubleListNode <T extends Comparable<T>>extends ListNode{
+public class DoubleListNode <T extends Comparable<T>> extends ListNode{
 	public DoubleListNode<T> previous;
 	public DoubleListNode<T> next;
+	//T value;
 	
 	public DoubleListNode(){
 		super();
 	}
 	
 	public DoubleListNode(T value){
-		this.value = value;
+		this();
+		this.value = (T)value;
 	}
 	
 	public void AddNode(int value){

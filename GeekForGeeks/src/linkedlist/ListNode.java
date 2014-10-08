@@ -30,13 +30,15 @@ public class ListNode <T extends Comparable<T>> implements Utility<T>{
 			this.next = null;
 			return;
 		}
-		ListNode tempNode = this;
+		
+		ListNode tempNode =  this;
+		
 		while(tempNode.next != null){
 			tempNode = tempNode.next;
 		}
+		
 		tempNode.next = node;
-		//node.next = null;
-	}
+		}
 	
 	
 	public ListNode<T> GetTail(){

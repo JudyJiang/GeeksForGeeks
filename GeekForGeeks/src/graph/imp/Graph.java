@@ -18,6 +18,7 @@ public class Graph {
 		this.numberOfNodes = 0;
 		this.numberOfEdges = 0;
 		this.nodesList = new HashMap<String, GraphNode>();
+	
 	}
 	
 	public GraphNode FindNode(String s) throws Exception{
@@ -84,5 +85,6 @@ public class Graph {
 		g.AddEdge(g.GetNode("E"),  g.GetNode("A"),  new Edge(7));
 		
 		GraphUtility.PrintGraph(g);
+		
 	}
 }

@@ -53,6 +53,7 @@ public class AddList {
 	
 	public static void main(String[] args){
 		ListNode<Integer> l1 = new ListNode(), l2 = new ListNode();
+	
 		//l1.GetSampleList(new Integer[]{5, 6, 3});
 		//l2.GetSampleList(new Integer[]{8, 4, 2});
 		l1.GetSampleList(new Integer[]{7, 5, 9, 4, 6});

@@ -200,38 +200,4 @@ public class BTree<Key extends Comparable<? super Key>, Value> {
 			// else current node is not affected
 		}
 	}
-
-	public static List<Integer> GrayCode(int n) {
-		List<Integer> list = new ArrayList<Integer>();
-		return GrayCode(n, list, n);
-	}
-
-	public static List<Integer> GrayCode(int n, List<Integer> res, int times) {
-		if (n == 0) {
-			res.add(0);
-			return res;
-		}
-
-	    GrayCode(n - 1, res, times);
-		for(Integer integer : res){
-			int start = 1;
-			int offset = 0;
-			for(int i = 0; i < times; i++){
-				offset = start << i;
-				int tmp = offset | integer;
-				System.out.print(tmp + " ");
-			}
-		}
-		System.out.println();
-		return null;
-	}
-
-	public static void main(String[] args) {
-		List<Integer> res = GrayCode(3);
-		//System.out.println(res.size());
-//		for(Integer i : res){
-//			System.out.println(i);
-//		}
-		
-	}
 }

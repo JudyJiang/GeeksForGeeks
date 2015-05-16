@@ -1,6 +1,10 @@
 package PayAttention;
 import java.util.*;
 
+/*
+ * Similar two "TwoSum"
+ * Use the HashSet to be a container for additional values
+ */
 public class LongestConsecutiveSequence {
 	public static int longestConsecutive(int[] nums) {
 		int maxLen = 0;

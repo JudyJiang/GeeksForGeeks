@@ -1,6 +1,10 @@
 package PayAttention;
 import java.util.*;
 
+
+/*
+ * Similar with LongestConsecutiveSequence
+ */
 public class TwoSum {
 	
 	public static int[] twoSum(int[] nums, int target) {

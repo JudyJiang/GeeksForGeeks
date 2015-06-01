@@ -1,6 +1,10 @@
+
 public class CompareVersionNumber {
 	// could be 3.5.4.4 ...
-
+	//Trick is 
+	//1.zeros before each number
+	//2.zeros at the end;
+	//3.use the Integer.parseInt!!
 	public static int compareVersion(String version1, String version2) {
 		String[] s1 = version1.split("\\.");
 		String[] s2 = version2.split("\\.");

@@ -1,5 +1,6 @@
-import java.util.*;
 
+import java.util.*;
+//http://www.programcreek.com/2014/03/leetcode-excel-sheet-column-title-java/
 public class ExcelSheetColumnToTitle {
 	public static String convertToTitle(int n){
 		if(n <= 0)
@@ -17,7 +18,7 @@ public class ExcelSheetColumnToTitle {
 	}
 	
 	public static void main(String[] args){
-		int n = 52;
+		int n = 26;
 		System.out.println(convertToTitle(n));
 	}
 }

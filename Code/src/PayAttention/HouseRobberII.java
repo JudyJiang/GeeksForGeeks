@@ -1,3 +1,4 @@
+package PayAttention;
 
 /*
  * http://zwzbill8.blogspot.com.br/2015/05/leetcode-house-robber-ii.html

@@ -70,7 +70,7 @@ public class CourseSchedule {
 		while(!queue.isEmpty()){
 			int top = queue.remove();
 			for(int i = 0; i < len; i++){
-				if(pCounter[pres[i][0]] == top){
+				if(pCounter[pres[i][1]] == top){
 					pCounter[pres[i][0]]--;
 					if(pCounter[pres[i][0]] == 0){
 						numPre++;

@@ -11,7 +11,7 @@ public class FindMinimumInRotatedSortedArray {
 		int mid = (left + right) / 2; //left + (right - left) / 2
 		//if no rotation ....this is important cause if there's rotation
 		//left is going to be bigger than right
-		if(nums[left] < nums[right])
+		if(nums[left] < nums[right]) //4, 5, 6, 7, 0, 1, 2
 			return nums[left];
 		
 		//go to left;
@@ -31,6 +31,14 @@ public class FindMinimumInRotatedSortedArray {
 		int min = Integer.MAX_VALUE;
 		
 		return findMin(nums, 0, nums.length - 1);
+	}
+	
+	
+	public static int findMax(int[] nums){
+		/*
+		 * same thoughts, just change the left, middle and right 
+		 */
+		return 1;
 	}
 	
 	public static void main(String[] args){

@@ -1,3 +1,4 @@
+package PayAttention;
 /*
  * Such problem which involves the "a total number", "the i-th fraction", "the j-th index"
  * normally will use "/" and "%"

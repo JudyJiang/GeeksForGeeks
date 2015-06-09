@@ -14,5 +14,14 @@ public class TreeNode {
 		this.val = val;	
 	}
 	
-	
+	public int getTreeNodeNumber(){
+		if(this == null)
+			return 0;
+		if(this.left == null && this.right == null)
+			return 1;
+		
+		int left = this.left == null ? 0 : this.left.getTreeNodeNumber();
+		int right = this.right == null ? 0 : this.right.getTreeNodeNumber();
+		return left + right + 1;
+	}
 }

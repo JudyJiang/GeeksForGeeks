@@ -35,7 +35,35 @@ public class RecoverBinarySearchTree {
 	}
 	
 	public static void recoverTreeConstantT(TreeNode root){
+		if(root == null || (root.left == null && root.right == null))
+			return ;
+		TreeNode[] tmp = new TreeNode[3];
+		//tmp[0], tmp[1] for the two swapt nodes, tmp[2] is always the 
+		//current node going down left branch and right branch for comparison. 
+		tmp = recoverTreeConstantT(root, tmp);
+		if(tmp[0] != null && tmp[1] != null){
+			int t = tmp[0].val;
+			tmp[0].val = tmp[1].val;
+			tmp[1].val = t;
+		}
+	}
+	
+	public static TreeNode[] recoverTreeConstantT(TreeNode root, TreeNode[] tmp){
+		if(root == null)
+			return tmp;
 		
+		tmp = recoverTreeConstantT(root.left, tmp);
+		if(tmp[2] != null && tmp[2].val > root.val){ // this is returns from the left and tmp[2] should always
+			//be smaller than the current!
+			if(tmp[0] == null)
+				tmp[0] = tmp[2];
+			tmp[1] = root; // this is a nice step
+			//cause tmp[2] is always changing records the current comparison node
+			//tmp[1] is the current node being compared. 
+		}
+		tmp[2] = root;
+		tmp = recoverTreeConstantT(root.right, tmp);
+		return tmp;
 	}
 
 	public static void main(String[] args) {
@@ -52,7 +80,7 @@ public class RecoverBinarySearchTree {
 		for (TreeNode node : res)
 			System.out.print(node.val + " ");
 		System.out.println();
-		recoverTree(root);
+		recoverTreeConstantT(root);
 		res = BSTToArray.bstToInOrderArray(root);
 		for (TreeNode node : res) {
 			System.out.print(node.val + " ");

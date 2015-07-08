@@ -1,8 +1,23 @@
 import java.util.*;
 
+
+import utility.*;
+
 public class test {
-	public static void main(String[] args){
-		LinkedList<Integer> list = new LinkedList<Integer>();
-	
+	public String permuteSequence(int n, int k){
+		return "";
 	}
+	
+	
+	
+	
+/* 
+"123"
+"132"
+"213"
+"231"
+"312"
+"321"
+*/
+	
 }

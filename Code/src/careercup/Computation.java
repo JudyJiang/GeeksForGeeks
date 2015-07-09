@@ -58,12 +58,13 @@ public class Computation {
 		}
 		
 		if(s.size() == 1 && s.peek() != target){
+			//System.out.println("final res: " + s.peek());
 			return ;
 		}
 		
 		int a = s.pop(), b = s.pop();
 		for(int i = 0; i < operands.length; i++){
-			System.out.println(a + " " + b + compute(a, b, operands[i]));
+			//System.out.println(a + " " + b + " " + compute(a, b, operands[i]));
 			s.push(compute(a, b, operands[i]));
 			evaluate(s, target, trace);
 			if(!s.isEmpty())
@@ -79,13 +80,13 @@ public class Computation {
 			val = b + a;
 			break;
 		case "-":
-			val = b - a;
+			val = a - b;
 			break;
 		case "*":
 			val = b * a;
 			break;
 		case "/":
-			val = b / a;
+			val = a / b;
 			break;
 		}
 		return val;

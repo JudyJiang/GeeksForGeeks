@@ -31,9 +31,11 @@ public class RomoveDuplicatesSortedArrayII {
 	}
 	
 	public static void main(String[] args){
-		int[][] test = {{1, 2, 3, 4, 5}, {1, 1, 2, 2, 3}, 
+		int[][] test = {{1, 2, 3, 4, 5}, 
+				        {1, 1, 1, 2, 2, 3}, 
 				        {1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4}, 
 				        {1, 2, 2, 2, 2, 5, 5, 5}};
+		//System.out.println(removeDuplicatesSortedArrayII(test[1]));
 		System.out.println(removeDuplicates(test[2]));
 	}
 }

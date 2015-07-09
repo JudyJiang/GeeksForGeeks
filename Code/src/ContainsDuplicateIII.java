@@ -1,16 +1,34 @@
 import java.util.*;
 
 public class ContainsDuplicateIII {
-	public static int containsNearbyAlmostDuplicate(int[] nums, int k, int t){
-		return -1;
+	public static boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t){
+		if(nums == null || nums.length == 0){
+			return false;
+		}
+		
+		TreeSet<Integer> set = new TreeSet<Integer>();
+		for(int i = 0; i < nums.length; i++){
+			int value = nums[i];
+			if((set.floor(value) != null && set.floor(value) + t >= value) ||
+			(set.ceiling(value) != null && set.ceiling(value) - t <= value)){
+			    return true;
+			}
+			
+			set.add(value);
+			if(i >= k)
+				set.remove(nums[i - k]);
+		}
+		return false;
 	}
 	
 	public static void main(String[] args){
-		Random r = new Random();
-		int[] nums = new int[10];
-		for(int i = 0; i < nums.length; i++){
-			nums[i] = r.nextInt(20);
-			System.out.print(nums[i] + " ");
-		}
+		TreeSet<Integer> set = new TreeSet<Integer>();
+		set.add(49);
+		set.add(68);
+		set.add(54);
+		set.add(80);
+		set.add(1);
+		set.add(43);
+		System.out.println(set.floor(70));
 	}
 }

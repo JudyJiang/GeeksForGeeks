@@ -1,4 +1,5 @@
 import java.util.*;
+<<<<<<< HEAD
 import utility.*;
 
 public class test {
@@ -43,4 +44,27 @@ public class test {
 			System.out.println();
 		}
 	}
+=======
+
+
+import utility.*;
+
+public class test {
+	public String permuteSequence(int n, int k){
+		return "";
+	}
+	
+	
+	
+	
+/* 
+"123"
+"132"
+"213"
+"231"
+"312"
+"321"
+*/
+	
+>>>>>>> cd462dd042a79088893d58a5bbb18a885368ffde
 }

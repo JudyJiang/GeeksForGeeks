@@ -1,20 +1,38 @@
 package string;
 
+import java.util.*;
 public class RecursivePrintSentence {
-	public static void printUtil(String[] s1, String[] s2, String[] s3, int i, int j, int k){
-		if(i >= s1.length || j >= s2.length || k >= s3.length)
+	public static void printString(List<List<String>> lists){
+		int m = lists.size(), n = lists.get(0).size();
+		String[] output = new String[m];
+		
+		for(int i = 0; i < n; i++){
+			printString(lists, 0, i, output);
+		}
+	}
+	
+	
+	public static void printString(List<List<String>> lists, int m, int n, String[] output){	
+		output[m] = lists.get(m).get(n);
+		
+		if(m == lists.size() - 1){
+			for(int i = 0; i < output.length; i++)
+				System.out.print(output[i] + " ");
+			System.out.println();
 			return ;
+		}//finish condition is very important. 
 		
-		System.out.println(s1[i] + " " + s2[j] + " " + s3[k]);
-		i++; j++; k++;
-		printUtil(s1, s2, s3, i, j, k);
 		
+		for(int i = 0; i < lists.get(m + 1).size(); i++){//should be (m+1) not current size
+				printString(lists, m + 1, i, output);
+		}
 	}
 	
 	public static void main(String[] args){
-		String[] s1 = {"You", "We"};
-		String[] s2 = {"have", "are"};
-		String[] s3 = {"sleep", "eat", "drink"};
-		printUtil(s1, s2, s3, 0, 0, 0);
+		List<List<String>> lists = new LinkedList<List<String>>();
+		lists.add(Arrays.asList(new String[]{"You", "We"}));
+		lists.add(Arrays.asList(new String[]{"Have", "Are"}));
+		lists.add(Arrays.asList(new String[]{"Sleep", "Eat", "Drink"}));
+		printString(lists);
 	}
 }

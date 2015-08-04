@@ -3,16 +3,20 @@ package careercup;
 import java.util.*;
 import java.util.Map.Entry;
 
+
 public class RearrangeString {
-	static class ValueCompare implements Comparator{
-		private Map map;
+//http://stackoverflow.com/questions/1448369/how-to-sort-a-treemap-based-on-its-values
+	static class ValueComparator implements Comparator {
+		Map map;
 		
-		public ValueCompare(Map m){
-			this.map = m;
+		public ValueComparator(Map map){
+			this.map = map;
+
 		}
 		
 		@Override
 		public int compare(Object o1, Object o2) {
+
 			Comparable value1 = (Comparable)map.get(o1);
 			Comparable value2 = (Comparable)map.get(o2);
 			if(value1.compareTo(value2) >= 0)
@@ -50,9 +54,5 @@ public class RearrangeString {
 		System.out.println(sb.toString());
 		return sb.toString();
 	}
-	
-	public static void main(String[] args){
-		//String test = "AAAAABBBDDDCCEEDF";
-		//rearrange(test);
-			}
+	 
 }

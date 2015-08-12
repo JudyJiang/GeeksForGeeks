@@ -34,7 +34,7 @@ public class RearrangeString {
 				map.put(c, map.get(c) + 1);
 		}
 		
-		Map sortedMap = new TreeMap(new ValueCompare(map));
+		Map sortedMap = null;// new TreeMap(new ValueCompare(map));
 		sortedMap.putAll(map);
 		int count = 0;
 		StringBuilder sb = new StringBuilder();

@@ -1,5 +1,7 @@
 package utility;
 
+import java.util.*;
+
 public class test {
 	
 	public static void selectionSort(int[] arr){
@@ -130,6 +132,10 @@ public class test {
 		quickSort(arr);
 		for(int i = 0; i < arr.length; i++)
 			System.out.print(arr[i] + " ");
+		
+		HashMap<Integer, Boolean> map = new HashMap<Integer, Boolean>();
+		System.out.println(map.get(1));
+		
 	}
 	
 }

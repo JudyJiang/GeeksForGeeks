@@ -1,7 +1,6 @@
 package string;
 
 import java.util.*;
-
 public class RecursivePrintSentence {
 	public static void printString(List<List<String>> lists){
 		int m = lists.size(), n = lists.get(0).size();

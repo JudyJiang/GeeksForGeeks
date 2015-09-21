@@ -8,6 +8,8 @@ public class SampleTrees {
 	static TreeNode root3;
 	static TreeNode root4;
 	static TreeNode root5;
+	static TreeNode root6;
+	static TreeNode root7;
 	
 	static{
 		/*
@@ -99,5 +101,37 @@ public class SampleTrees {
 		root5.right.right.right = new TreeNode(8);
 		root5.right.right.right.right = new TreeNode(10);
 		root5.right.right.right.right.left = new TreeNode(11);
+	}
+	
+	
+	static {
+		/*
+		 * 				20
+		 * 			   /  \
+		 * 			  8    22
+		 *           / \
+		 *          4   12
+		 *             /  \
+		 *            10  14
+		 */
+		root6 = new TreeNode(20);
+		root6.left = new TreeNode(8);
+		root6.left.left = new TreeNode(4);
+		root6.left.right = new TreeNode(12);
+		root6.left.right.left = new TreeNode(10);
+		root6.left.right.right = new TreeNode(14);
+		root6.right = new TreeNode(22);
+	}
+	
+	
+	static {
+		/*
+		 * 
+		 */
+		root7 = new TreeNode(20);
+		root7.left = new TreeNode(8);
+		root7.right = new TreeNode(22);
+		root7.left.left = new TreeNode(4);
+		root7.left.right = new TreeNode(12);
 	}
 }

@@ -3,6 +3,7 @@ package string;
 import java.util.*;
 
 public class WordLadderII {
+
 	static class WordNode {
 		String word;
 		int steps;
@@ -599,6 +600,11 @@ public class WordLadderII {
 			for(String s : l)
 				System.out.print(s + " ");
 		System.out.println();
-		System.out.println(endTime - startTime);
+		System.out.println(endTime - startTime);}
+
+	public static List<List<String>> findLadders(String start, String end, Set<String> dict){
+		List<List<String>> res = new LinkedList<List<String>>();
+		return res;
+
 	}
 }
